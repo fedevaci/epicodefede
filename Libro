@@ -1,0 +1,10 @@
+Libro {
+	"capitoli":["Acqua","Fuoco","Terra","Aria"],
+
+	"autore"{
+		"nome":"Cesare","Augusto","Romolo","Gaudenzio"
+		"indirizzo":"Via_botticelli_1"
+
+	}
+
+}

@@ -1,0 +1,24 @@
+CD {
+	"nome CD":"Xenoverso",
+	"genere CD":"Rap",
+	"anno di pubblicazione":2022
+	"Casa discografica"{
+		"nome":"Universal Music ITA s.r.l",
+		"sede legale":"Via Benigno Crespi, 19 - 20159 Milano",
+
+	},
+	"Artista":{
+		"nome artistico":"Rancore",
+		"nominativo":"Tarek Urcic",
+		"sottogenere":"Rap ermetico",
+		"ablum pubblicati":5,
+		"citta":"Roma"
+		"eta":34,
+
+	},
+	"Tracce":{
+		"nomi":["Ombra","Freccia","Federico","Guardie e Ladri","Lontano 2036","X Agosto","Arakno","Le rime","Fantasia","Ignoranze funebri","Eden","Equatore","Xenoverso","Questa cosa che io ho scritto mi piace","Io non sono io"],
+		"durate":["00:03:15","00:03:25","00:04:07","00:02:48","00:06:15","00:05:00","00:03:34","00:03:11","00:03:10","00:03:00","00:03:28","00:03:32","00:03:44","00:03:02","00:06:00"]
+		},
+	"Informazioni aggiuntive CD":["Piccola guida con testi e spiegazioni","Sticker scambiabili"]
+	}
