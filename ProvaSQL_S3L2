@@ -1,0 +1,73 @@
+CREATE TABLE Aeroporto(IdAereoporto INTEGER PRIMARY KEY,
+                        Citta TEXT (60) NOT NULL,
+                        Nazione TEXT (50) NOT NULL,
+                        NumPiste INTEGER);
+CREATE TABLE Volo(IdVolo CHAR(5) PRIMARY KEY,GiornoSett TEXT (20) NOT NULL,
+                        CittaPart TEXT(60),
+                        OraPart TIME,
+                        CittaArr TEXT(60) NOT NULL,
+                        OraArr TIME,
+                        TipoAereo TEXT(80));
+CREATE TABLE Aereo(IdAereo INTEGER PRIMARY KEY,TipoAereo TEXT (20) NOT NULL,
+                        NumPasseggeri INTEGER,
+                        QtaMerce TEXT(30));
+
+INSERT INTO Aeroporto VALUES(1,'Bologna','Italia',3);
+INSERT INTO Aeroporto VALUES(2,'Torino','Italia',3);
+INSERT INTO Aeroporto VALUES(3,'Comiso','Italia',NULL);
+INSERT INTO Aeroporto VALUES(4,'Francoforte','Germania',4);
+INSERT INTO Aeroporto VALUES(5,'Amsterdam','Paesi Bassi',6);
+INSERT INTO Aeroporto VALUES(6,'Stoccolma','Svezia',NULL);
+INSERT INTO Aeroporto VALUES(7,'Londra','Regno Unito',4);
+INSERT INTO Aeroporto VALUES(8,'Rotterdam','Paesi Bassi',2);
+INSERT INTO Aeroporto VALUES(9,'Madrid','Spagna',NULL);
+INSERT INTO Aeroporto VALUES(10,'Gerusalemme','Palestina',3);
+INSERT INTO Aeroporto VALUES(11,'Tel Aviv','Israele',4);
+
+INSERT INTO Volo VALUES('AZ261','Lunedi','Torino','09:30','Berlino','11:20','Boing 747');
+INSERT INTO Volo VALUES('FG457','Lunedi','Comiso','11:00','Torino','12:10','Boing 737');
+INSERT INTO Volo VALUES('AZ274','Lunedi','Berlino','10:00','Londra','10:30','Eurofighter');
+INSERT INTO Volo VALUES('GH655','Lunedi','Comiso','7:00','Stoccolma','7:45','Caccia Bombardiere');
+INSERT INTO Volo VALUES('AX578','Lunedi','Comiso','10:00','Francoforte','10:45','Eurofighter');
+INSERT INTO Volo VALUES('AB998','Giovedi','Rotterdam','17:25','Madrid','18:55','Boing 737');
+INSERT INTO Volo VALUES('AH444','Giovedi','Gerusalemme','6:30','Roma','9:40','Boing 737');
+INSERT INTO Volo VALUES('AS222','Martedi','Tel Aviv','12:30','Roma','15:50','Boing 737');
+INSERT INTO Volo VALUES('SS666','Martedi','Bologna','9:30','Londra','12:30','Boing 737');
+INSERT INTO Volo VALUES('GG333','Giovedi','Comiso','15:50','Bologna','17:10','Boing 737');
+
+
+INSERT INTO Aereo VALUES(1,'Boing737',186,'15 tonnellate');
+INSERT INTO Aereo VALUES(2,'Boing747',416,'78 tonnellate');
+INSERT INTO Aereo VALUES(3,'Eurofighter',5,'30 kilogrammi');
+INSERT INTO Aereo VALUES(4,'Caccia Bombardiere',5,'25 kilogrammi');
+INSERT INTO Aereo VALUES(5,'Airbus A320',160,'5 tonnellate');
+INSERT INTO Aereo VALUES(6,'Airbus A320 NEO',180,'7 tonnellate');
+INSERT INTO Aereo VALUES(7,'F35',2,'10 kilogrammi');
+INSERT INTO Aereo VALUES(8,'F16',2,'0');
+INSERT INTO Aereo VALUES(9,'Cesna 172',1,'0');
+INSERT INTO Aereo VALUES(10,'Concord',100,'500 tonnellate');
+
+#SELECT Citta FROM Aeroporto WHERE NumPiste is NULL;
+
+#SELECT TipoAereo FROM Volo WHERE CittaPart='Torino';
+
+#SELECT CittaPart FROM Volo WHERE CittaArr='Bologna';
+
+#SELECT CittaPart, CittaArr FROM Volo WHERE IdVolo='AZ274';
+
+/*Qual è il tipo di aereo più utilizzato? */ 
+#SELECT TipoAereo FROM Volo ORDER BY TipoAereo;
+
+#SELECT COUNT(TipoAereo) FROM Volo WHERE TipoAereo='Boing 737';
+
+#SELECT DISTINCT TipoAereo FROM Volo;
+
+
+/*Quali voli partono il Lunedi?*/
+
+#SELECT * FROM Volo WHERE GiornoSett='Lunedi';
+
+
+/*Quali aereo ha più posti a sedere?*/
+
+#SELECT TipoAereo FROM Aereo WHERE 
