@@ -1,0 +1,202 @@
+#1. Creazione delle Tabelle: -->
+
+CREATE TABLE Vendite(IdTransazione VARCHAR(6) PRIMARY KEY,
+Categoria TEXT(50),
+Costo FLOAT(9,2),
+Sconto FLOAT(9,2));
+
+CREATE TABLE DettagliVendite(
+DataAcquisto DATE,
+Quantita INTEGER,
+IdTransazione VARCHAR(6));
+
+#2. Inserimento dei Dati: -->
+
+INSERT INTO Vendite (IdTransazione, Categoria, Costo, Sconto) VALUES
+('TR0001', 'Arrampicata', 500.00, 10),
+('TR0002', 'Trekking', 120.50, 0),
+('TR0003', 'Basketball', 300.75, 0),
+('TR0004', 'Orologi', 80.20, 43),
+('TR0005', 'Arrampicata', 700.00, 200),
+('TR0006', 'Basketball', 150.30, 6),
+('TR0007', 'Trekking', 50.75, 2),
+('TR0008', 'Orologi', 120.00, 0),
+('TR0009', 'Arrampicata', 450.50, 12),
+('TR0010', 'Basketball', 200.25, 0),
+('TR0011', 'Trekking', 90.80, 0),
+('TR0012', 'Orologi', 60.00, 5),
+('TR0013', 'Arrampicata', 800.00, 530),
+('TR0014', 'Basketball', 250.99, 160),
+('TR0015', 'Trekking', 110.40, 0),
+('TR0016', 'Orologi', 70.99, 6),
+('TR0017', 'Arrampicata', 600.75, 55),
+('TR0018', 'Basketball', 180.90, 7),
+('TR0019', 'Trekking', 70.00, 40),
+('TR0020', 'Orologi', 100.99, 4),
+('TR0021', 'Basketball', 380.00, 195),
+('TR0022','Trekking', 200.50, 120),
+('TR0023', 'Orologi', 180.75, 30),
+('TR0024', 'Trekking', 300.99, 0),
+('TR0025', 'Orologi', 80.00, 0),
+('TR0026', 'Trekking', 25.20, 6),
+('TR0027', 'Orologi', 100.00, 2),
+('TR0028', 'Trekking', 120.00, 0),
+('TR0029', 'Basketball', 1200.99, 0),
+('TR0030', 'Trekking', 200.99, 110),
+('TR0031', 'Trekking', 90.99, 52),
+('TR0032', 'Orologi', 49.99, 0),
+('TR0033', 'Basketball', 800.00, 530),
+('TR0034', 'Arrampicata', 250.60, 0),
+('TR0035', 'Arrampicata', 99.99, 10),
+('TR0036', 'Orologi', 49.99, 10),
+('TR0037', 'Arrampicata', 99.99, 20),
+('TR0038', 'Basketball', 99.99, 0),
+('TR0039', 'Trekking', 49.99, 0),
+('TR0040', 'Arrampicata', 100.00, 20);
+
+INSERT INTO DettagliVendite (DataAcquisto, Quantita, IdTransazione) VALUES
+('2023-01-20', 2, 'TR0001'),
+('2023-10-21', 3, 'TR0002'),
+('2023-12-12', 1, 'TR0003'),
+('2023-11-05', 4, 'TR0004'),
+('2023-05-22', 2, 'TR0005'),
+('2023-07-05', 1, 'TR0006'),
+('2023-01-05', 3, 'TR0007'),
+('2023-05-05', 2, 'TR0008'),
+('2023-05-22', 1, 'TR0009'),
+('2023-07-12', 4, 'TR0010'),
+('2023-05-11', 3, 'TR0011'),
+('2023-01-10', 2, 'TR0012'),
+('2023-06-05', 1, 'TR0013'),
+('2023-06-14', 4, 'TR0014'),
+('2023-08-18', 3, 'TR0015'),
+('2023-03-19', 2, 'TR0016'),
+('2023-02-17', 1, 'TR0017'),
+('2023-03-20', 4, 'TR0018'),
+('2023-01-04', 3, 'TR0019'),
+('2023-02-04', 2, 'TR0020'),
+('2023-09-04', 1, 'TR0021'),
+('2023-04-30', 4, 'TR0022'),
+('2023-01-30', 3, 'TR0023'),
+('2023-10-31', 2, 'TR0024'),
+('2023-10-31', 1, 'TR0025'),
+('2023-10-10', 4, 'TR0026'),
+('2023-11-27', 3, 'TR0027'),
+('2023-10-04', 2, 'TR0028'),
+('2023-05-02', 1, 'TR0029'),
+('2023-05-03', 4, 'TR0030'),
+('2023-09-03', 3, 'TR0031'),
+('2023-05-01', 2, 'TR0032'),
+('2023-04-03', 1, 'TR0033'),
+('2023-06-01', 4, 'TR0034'),
+('2023-06-12', 3, 'TR0035'),
+('2024-01-03', 2, 'TR0036'),
+('2024-01-02', 1, 'TR0037'),
+('2023-12-07', 4, 'TR0038'),
+('2024-02-05', 3, 'TR0039'),
+('2023-12-09', 2, 'TR0040');
+
+#Seleziona tutte le vendite avvenute in una specifica data. -->
+
+/*SELECT * FROM DettagliVendite AS D
+WHERE D.DataAcquisto='2023-05-22';*/
+
+
+#calcolare il costo di vendita per i prodotti dove è stato impostato uno sconto maggiore del 50% -->
+
+/*SELECT IdTransazione, (Costo-Sconto) AS PrezzoVendita, (Sconto/Costo)*100 AS ScontoPercentuale 
+FROM Vendite V
+WHERE (Sconto/Costo)*100>50;*/
+
+#Calcolare il totale di ogni categoria -->
+
+/*SELECT Categoria, SUM(Costo-Sconto) AS Totale 
+FROM Vendite 
+GROUP BY Categoria;*/
+
+#Trova il numero totale di prodotti venduti per ogni categoria. -->
+
+/*SELECT V.Categoria, SUM(D.quantita) AS ProdottiVenduti
+FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione= D.IdTransazione
+GROUP BY V.Categoria;*/
+
+#•Seleziona le vendite dell'ultimo trimestre. --> (Assumo che il trimestre sia composto da 90 giorni)
+/*SELECT * FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione= D.IdTransazione
+WHERE DATEDIFF(NOW(),D.DataAcquisto)<=90;*/
+
+#•Raggruppa le vendite per mese e calcola il totale delle vendite per ogni mese. --> ho utilizzato MOUNTHNAME per puri fini estetici, mentre MONTH per la parte logica del group by ordinare in ordine decrescente.
+#Ho pensato anche di dover specificare l'anno, altrimenti mi raggruppava i mesi anche di anni diversi
+/*SELECT YEAR(D.DataAcquisto) AS Anno, MONTH(D.DataAcquisto) AS Num, MONTHNAME(D.DataAcquisto) AS Mese, SUM(V.Costo - V.Sconto) AS Totale
+FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione = D.IdTransazione
+GROUP BY YEAR(D.DataAcquisto), MONTH(D.DataAcquisto), MONTHNAME(D.DataAcquisto)
+ORDER BY YEAR(D.DataAcquisto) DESC, MONTH(D.DataAcquisto) DESC;*/
+
+#•Trova la categoria con lo sconto medio più alto.
+#mi venivano troppe cifre decimali e ho usato la funzione di arrotondamento a 2 cifre decimali
+/*SELECT Categoria, Round(AVG((Sconto/Costo)*100),2) AS ScontoMedioPercentuale FROM Vendite
+GROUP BY Categoria
+ORDER BY ScontoMedioPercentuale DESC;*/
+
+
+#•Confronta le vendite mese per mese per vedere l'incremento o il decremento delle vendite. Calcola l’incremento o decremento mese per mese
+#a mio avviso la query più difficile, forse non avevo capito la consegna, ma in ogni caso ci ho messo 2 ore e sono arrivato a questa conclusione
+#purtroppo non riesco a trovare una soluzione per riuscire a calcolare anche i mesi di gennaio.
+#ho splittato la stessa tabella in 2, facendo poi una join dato che dovevo utilizzare la stessa tabella due volte ma portando i dati della seconda sul mese precedente
+/*SELECT m1.Anno, m1.Mese, m1.Totale1, (m1.Totale1 - m2.Totale2) AS Incremento
+FROM
+    (SELECT
+        YEAR(DataAcquisto) AS Anno,
+        MONTH(DataAcquisto) AS Mese,
+        SUM(v1.Costo-v1.Sconto) AS Totale1
+        FROM DettagliVendite d1
+        INNER JOIN Vendite v1 ON d1.IdTransazione = v1.IdTransazione
+        WHERE MONTH(d1.DataAcquisto)<>1     #N.B. Ho messo questa clausola, perché il calcolo di gennaio lo dava nullo. Avrebbe dovuto fare gennaio 2024 ad es. - dicembre 2023, ma non sono riuscito ad impostarlo
+        GROUP BY Anno, Mese) AS m1
+LEFT JOIN
+    (SELECT
+        YEAR(DataAcquisto) AS Anno,
+        MONTH(DataAcquisto) AS Mese,
+        SUM(v2.Costo-v2.Sconto) AS Totale2
+        FROM DettagliVendite d2
+        INNER JOIN Vendite v2 ON d2.IdTransazione = v2.IdTransazione
+        GROUP BY Anno, Mese) AS m2 
+ON m1.Mese = m2.Mese + 1 AND m1.Anno=m2.Anno
+ORDER BY m1.Anno, m1.Mese;
+*/#In questo caso l'incremento di gennaio 2023 non è calcolabile perché non ci sono dati relativi al 2023, mentre quello del 2024 è di -360,76
+ 
+#9. Analisi Stagionale: •Confronta le vendite totali in diverse stagioni. le ho divise in 4 query, una per stagione
+#INVERNO
+/*SELECT YEAR(D.DataAcquisto) AS Anno, SUM(V.Costo - V.Sconto) AS Totale_Inverno
+FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione = D.IdTransazione
+WHERE MONTH(D.DataAcquisto) BETWEEN 1 AND 3 
+GROUP BY YEAR(D.DataAcquisto);*/
+
+#PRIMAVERA
+/*SELECT YEAR(D.DataAcquisto) AS Anno, SUM(V.Costo - V.Sconto) AS Totale_Inverno
+FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione = D.IdTransazione
+WHERE MONTH(D.DataAcquisto) BETWEEN 4 AND 6 
+GROUP BY YEAR(D.DataAcquisto);*/
+
+#ESTATE
+/*SELECT YEAR(D.DataAcquisto) AS Anno, SUM(V.Costo - V.Sconto) AS Totale_Inverno
+FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione = D.IdTransazione
+WHERE MONTH(D.DataAcquisto) BETWEEN 7 AND 9 
+GROUP BY YEAR(D.DataAcquisto);*/
+
+#AUTUNNO
+/*SELECT YEAR(D.DataAcquisto) AS Anno, SUM(V.Costo - V.Sconto) AS Totale_Inverno
+FROM Vendite AS V
+INNER JOIN DettagliVendite AS D ON V.IdTransazione = D.IdTransazione
+WHERE MONTH(D.DataAcquisto) BETWEEN 10 AND 12 
+GROUP BY YEAR(D.DataAcquisto);
+*/
+
+#Supponendo di avere una tabella clienti con i campi IDCliente e IDVendita, scrivi una query per trovare i top 5 clienti con il maggior numero di acquisti.
+#Non riesco col tempo, ma suppongo utilizzerei una join tra le tabelle clienti e la tabella vendite(dove all'interno inserirei una foreign key idcliente) così da vedere tramite una SUM dei costi qual è il cliente
+#che ha speso di più e poi utilizzare la funzione TOP
