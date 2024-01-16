@@ -1,0 +1,59 @@
+1) Fare la spesa
+a.Lavati
+b.Vestiti
+c.Mettiti le scarpe
+d.Prendi i contanti e/o la carta di credito
+e.Prendi le chiavi di casa
+f.Prendi le buste che ti serviranno per mettere i prodotti
+g.Spegni le luci in casa
+h.Esci di casa
+i.Chiudi la porta
+l.Dirigiti al supermercato camminando ed evitando gli ostacoli fisici
+m.Se sei arrivato al supermercato: dirigiti verso i carrelli, altrimenti torna al punto "i"
+n.Inserisci la moneta nell'apposita fessura presente nel carrello
+o.Disinnesca la catena del carrello
+p.Entra nel supermercato
+q.Inserisci nel carrello i prodotti che ti servono
+r.Se hai finito di inserire i prodotti vai alla cassa, altrimenti torna al punto "q"
+s.Fai la coda
+t.Se sei arrivato all'altezza del rullo, posiziona i prodotti al di sopra di esso, altrimenti torna al punto "t"
+u.Aspetta
+v.Se sei il primo della fila, saluta l'operatore di cassa, altrimenti torna al punto "u"
+z.Metti i prodotti nelle tue buste
+ab.Paga
+ac.Saluta l'operatore, augurandogli una buona giornata
+
+2)Fare un disegno
+a.Dirigiti nella tua cameretta
+b.Vai verso la scrivania
+c.Prendi un foglio A4 
+d.Prendi una matita
+e.Prenditi 5 minuti per pensare a delle immagini
+f.Continua a pensare
+d.Se c'è un immagine che ti ispira particolarmente, tienila a mente, altrimenti torna a punto "f"
+e.Visualizza l'immagine scelta sul foglio
+f.Prendi la matita in mano
+g.Posiziona la matita su un punto del foglio che corrisponde alla tua proiezione mentale
+h.Inizia a ricalcare la proiezione
+i.Continua
+l.Se hai finito di ricalcare: Finito, altrimenti torna a punto "i"
+
+3)Fare il caffè
+a.Hai la moka? Se non ce l'hai, torna all'algoritmo precedente e valla a comprare
+b.Vai in cucina
+c.Apri gli sportelli della ucina
+d.Cerca la moka
+e.Se hai trovato la moka, cerca il caffè macinato, altrimenti torna a punto "d" 
+f.Se hai trovato il caffè macinato, Prendi la moka in mano, altrimenti torna a punto "e"
+g.Svita la moka
+h.Separa il filtro dalla caldaia
+i.Riempi la caldaia con acqua a temperatura ambiente, fino al filtro
+l.Prendi un cucchiaino
+m.preleva una quantità di caffe
+n.svuota il cucchiaino all'interno del filtro 
+o.se hai riempito il filtro, riavvita i componenti della moka, altrimenti torna a "m"
+p.Metti la moka su un fornello
+q.Accendi il fuoco
+r.Aspetta
+s.Guarda dentro al bricco
+t.Se sta uscendo il caffè nel bricco spegni il fuoco, altrimenti torna a "r"
