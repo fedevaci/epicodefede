@@ -1,0 +1,69 @@
+-->
+studenti= 25
+#print(studenti)
+studenti_in_arrivo=3
+tot_studenti=studenti+studenti_in_arrivo
+print(tot_studenti)
+
+-->
+parola="Epicode"
+print(parola)
+
+-->
+lista=[0,1,2,3,4,5]
+print(lista)
+
+-->
+nome_scuola="Epicode"
+print(nome_scuola[1]) 
+print(nome_scuola[0:4])
+print(nome_scuola[-5:])
+lunghezza=len(nome_scuola)
+print(lunghezza)
+
+-->
+nome="Federico"
+cognome="Vacirca"
+print(nome+" "+cognome)
+concatenata=nome+cognome
+ripetizione=concatenata*10
+print(ripetizione)
+
+-->
+nome=input("Come ti chiami? ")
+stringa_nome=nome[0].upper()+nome[1:]
+anni=int(input("Quanti anni hai? "))
+print("Mi chiamo ",stringa_nome," e ho",anni," anni")
+
+#Esercizio Abbiamo la variabile: x = 10. Incrementarla di 2 e poi moltiplicarla per 3 --> Usare due metodi diversi (ad esempio, uno utilizzando gli operatori di assegnazione, e uno senza)
+#caso 1 
+x=10
+x=x+2
+x=x*3
+
+#caso 2 
+x=10
+x=(x+2)*3
+
+#Scriviamo un programma che chiede in input all'utente una stringa e visualizza i primi 3 caratteri, seguiti da 3 punti di sospensione e quindi gli ultimi 3 caratteri.
+
+inserimento=input("Dammi una stringa: ")
+print(inserimento[0:3],"...",inserimento[-3:])
+
+#Esercizio Verificare, per ognuna delle seguenti stringhe, se il numero di caratteri è compreso tra 5 e 8: • Windows • Excel • Powerpoint • Word
+a="Windows"
+b="Excel"
+c="Powerpoint"
+d="Word"
+
+stampa=[len(a),len(b),len(c),len(d)]
+print(stampa)
+
+#Inventare un programma che prende in input degli elementi e restituisce in output una loro combinazione (ad esempio prendendo in input due numeri e restituendo la loro somma).
+nome=input("Dimmi il tuo nome: ")
+cognome=input("e il tuo cognome qual e? ")
+mail=input("Scrivi ora l'indirizzo email: ")
+anni=int(input("Indica la tua eta: "))
+formazione=input("per quale professione ti stai formando? ")
+
+print("Mi chiamo ",nome+""+cognome+", ho",anni," anni e mi sto formando come ",formazione,". Per qualsiasi cosa, contattatemi alla seguente mail: ",mail)
