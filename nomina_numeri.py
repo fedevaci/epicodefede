@@ -1,3 +1,4 @@
+#STAMPA i numeri da 0 a 9999 in italiano
 def nominaventi(numero):
     if(numero>100):
         numero=numero%100
@@ -35,16 +36,22 @@ def nominadiecimila(numero):
     r=numero%1000
     x=numero-r
     mill=round(x/1000)
-    return nomi_migliaia[mill]    
-    
-numero=int(input("Inserisci un numero intero e ti darò il suo nome in italiano: ")) 
-if(numero==0):
-    print("zero")
-elif(numero<20):
-    print(nominaventi(numero))
-elif(numero<100):
-    print(nominacento(numero)+nominaventi(numero))
-elif(numero<1000):
-    print(nominamille(numero)+nominacento(numero)+nominaventi(numero))
-elif(numero<10000):
-    print(nominadiecimila(numero)+nominamille(numero)+nominacento(numero)+nominaventi(numero))
+    return nomi_migliaia[mill]
+   
+try:   
+    numero=int(input("Inserisci un numero intero e ti darò il suo nome in italiano: ")) 
+    if numero<0 or numero>9999:
+        print("Fuori campo massimo. Il numero è negativo oppure è maggiore di 9999")
+    if(numero==0):
+        print("zero")
+    elif(numero<20):
+        print(nominaventi(numero))
+    elif(numero<100):
+        print(nominacento(numero)+nominaventi(numero))
+    elif(numero<1000):
+        print(nominamille(numero)+nominacento(numero)+nominaventi(numero))
+    elif(numero<10000):
+        print(nominadiecimila(numero)+nominamille(numero)+nominacento(numero)+nominaventi(numero))
+
+except ValueError:
+    print("Non hai inserito un numero! Prova a reinserire")
